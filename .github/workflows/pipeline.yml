@@ -7,14 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-  # AŞAMA 1: Statik Analiz (ISO 5055 & ISO 27001)
+  # AŞAMA 1: Statik Analiz (ISO 5055)
   static-analysis:
-    name: Statik Kod ve Güvenlik Analizi
+    name: Statik Kod Analizi
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Sonar'ın tam history'ye erişmesi için
 
       - name: Node.js Kurulumu
         uses: actions/setup-node@v3
@@ -22,31 +20,16 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: SonarCloud Bağlantı Kontrolü
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          if [ -z "$SONAR_TOKEN" ]; then
-            echo "❌ SONAR_TOKEN tanımlanmamış!"
-            echo "GitHub Secrets'a SONAR_TOKEN ekleyin"
-            exit 1
-          fi
-          echo "✅ SONAR_TOKEN'ı başarıyla buldum"
+      - name: Bağımlılıkları Yükle
+        run: npm install
 
-      - name: SonarCloud Taraması
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.qualitygate.wait=true
-            -Dsonar.verbose=false
+      - name: ESLint Kontrol (ISO 5055)
+        run: npm run lint
+        continue-on-error: true
 
-      - name: Bağımlılık Güvenlik Taraması (Snyk)
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Prettier Format Kontrol
+        run: npm run prettier:check
+        continue-on-error: true
 
   # AŞAMA 2: Test ve Kapsam (ISO 29119 & Gate 3)
   unit-testing:

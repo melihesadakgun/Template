@@ -1,6 +1,8 @@
-# SonarCloud Kurulum Rehberi
+# SonarCloud Kurulum Rehberi (İsteğe Bağlı)
 
-Bu rehber, projenin SonarCloud ile statik analiz yapmasını sağlamak için gerekli adımları açıklar.
+**Not:** Bu rehber opsiyoneldir. Proje ESLint + Jest ile başarılı çalışır.
+
+Eğer daha ileri kod analizi ve quality metrics istiyorsanız bu rehberi izleyin.
 
 ---
 
