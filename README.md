@@ -18,7 +18,7 @@ Proje yönetimi ve kalite süreçleri için aşağıdaki dökümanları takip ed
 
 | \*\*Anayasa\*\* | `GEMINI.md` | Küresel kurallar ve temel ilkeler. |
 
-| \*\*İş Akışı\*\* | `globalworkflow.md` | Uçtan uca geliştirme ve kapı geçiş süreçleri. |
+| \*\*İş Akışı\*\* | `globalworkflows.md` | Uçtan uca geliştirme ve kapı geçiş süreçleri. |
 
 | \*\*Sorumluluklar\*\*| `/docs/yonetim/RACI\_MATRISI.md` | Kimin neyden sorumlu olduğu (RACI). |
 
