@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "sonarsource.sonarlint-vscode",
+    "snyk-security.snyk-vscode",
+    "ryanluker.vscode-coverage-gutters",
+    "yzhang.markdown-all-in-one",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig"
+  ]
+}

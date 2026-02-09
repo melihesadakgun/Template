@@ -1,0 +1,44 @@
+# EditorConfig - Proje Geneline Tutarlı Kod Stili
+
+root = true
+
+# Tüm dosyalar
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown Dosyaları (Türkçe Dokümantasyon)
+[*.{md,mdx}]
+max_line_length = off
+trim_trailing_whitespace = false
+
+# Kod Dosyaları
+[*.{js,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+[*.{json,jsonc}]
+indent_style = space
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+[*.{py}]
+indent_style = space
+indent_size = 4
+
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+[*.{html,xml}]
+indent_style = space
+indent_size = 2
+
+# Test Dosyaları
+[*.{test.js,spec.js,test.ts,spec.ts}]
+indent_size = 2

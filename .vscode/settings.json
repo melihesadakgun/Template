@@ -1,0 +1,27 @@
+{
+  // İletişim ve Dokümantasyon Kuralları (GEMINI.md)
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Yazım Denetimi (Türkçe dökümantasyon ve yorumlar için)
+  "cSpell.language": "en,tr",
+  "cSpell.enabled": true,
+
+  // İç Kalite ve Biçimlendirme (ISO 5055 Uyumu)
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Test Kapsamı Görünürlüğü (Kapı 3)
+  "coverage-gutters.showLineCoverage": true,
+  "coverage-gutters.showGutterCoverage": true,
+
+  // Git ve PR Süreçleri (Global Rules)
+  "git.enableSmartCommit": false,
+  "git.confirmSync": true,
+  "githubPullRequests.focusedMode": true
+}
